@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smriti - Farewell 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @keyframes float { 0%, 100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-20px) rotate(180deg); } }
+        @keyframes gradientShift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        @keyframes shine { 0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); } 100% { transform: translateX(100%) translateY(100%) rotate(45deg); } }
+        
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-gradient { animation: gradientShift 3s ease infinite; }
+        .animate-fadeInUp { animation: fadeInUp 1s ease-out; }
+        .animate-pulse-custom { animation: pulse 2s infinite; }
+        .animate-shine { animation: shine 0.6s ease; }
+        
+        .gradient-text { background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4); background-size: 300% 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass { backdrop-filter: blur(15px); }
+        .glass-light { backdrop-filter: blur(10px); }
+        .bg-gradient-main { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .bg-gradient-dark { background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%); }
+        .bg-gradient-card { background: linear-gradient(135deg, #667eea, #764ba2); }
+        .bg-gradient-gallery { background: linear-gradient(45deg, #ff9a9e, #fecfef, #fecfef); }
+        .bg-gradient-btn { background: linear-gradient(45deg, #ff6b6b, #4ecdc4); }
+        .bg-gradient-success { background: linear-gradient(45deg, #4ecdc4, #44e08f); }
+        
+        body.dark { background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%); color: #e0e6ed; }
+        .floating-shapes { animation: float 6s ease-in-out infinite; }
+        .floating-shapes:nth-child(1) { animation-delay: -2s; }
+        .floating-shapes:nth-child(2) { animation-delay: -4s; }
+        .floating-shapes:nth-child(3) { animation-delay: -1s; }
+        
+        /* Enhanced mobile-specific styles */
+        @media (max-width: 640px) {
+            .mobile-padding {
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+            .mobile-text {
+                font-size: 1.25rem;
+            }
+            .mobile-height {
+                height: 40vh;
+            }
+            .mobile-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .mobile-card {
+                padding: 1rem;
+            }
+            .mobile-heading {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+            .mobile-button {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.875rem;
+            }
+            .mobile-gallery {
+                grid-template-columns: 1fr;
+            }
+            .mobile-modal {
+                width: 95%;
+                height: 90%;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans leading-relaxed overflow-x-hidden bg-gradient-dark text-gray-200 transition-all duration-500">
+    <!-- Animated Background -->
+    <div class="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden">
+        <div class="absolute top-1/10 left-1/10 w-16 h-16 md:w-25 md:h-25 bg-white bg-opacity-10 rounded-full floating-shapes"></div>
+        <div class="absolute top-7/10 left-4/5 w-24 h-24 md:w-38 md:h-38 bg-white bg-opacity-10 rounded-full floating-shapes"></div>
+        <div class="absolute top-2/5 left-7/10 w-12 h-12 md:w-20 md:h-20 bg-white bg-opacity-10 rounded-full floating-shapes"></div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="relative h-screen flex items-center justify-center text-center bg-black bg-opacity-30 overflow-hidden">
+        <!-- Video Background -->
+        <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+            <source src="vedios/front.mp4" type="video/mp4">
+        </video>
+        <!-- Overlay to ensure text readability -->
+        <div class="absolute inset-0 bg-black bg-opacity-50 -z-5"></div>
+        <div class="z-10 animate-fadeInUp px-4">
+            <h1 class="text-2xl sm:text-3xl md:text-6xl font-bold mb-4 gradient-text animate-gradient">🎉 SMRUTI - FAREWELL 2025 🎉</h1>
+            <p class="text-base sm:text-lg md:text-2xl mb-6 md:mb-8 opacity-90">A day to Remember Forever</p>
+            <div class="inline-block bg-white bg-opacity-20 glass-light px-4 py-2 md:px-8 md:py-4 rounded-full border border-white border-opacity-30 text-sm md:text-xl font-semibold animate-pulse-custom">
+                <i class="fas fa-calendar-alt mr-2 md:mr-3"></i>May 31st, 2025
+            </div>
+        </div>
+    </header>
+
+    <!-- Countdown Section -->
+    <section class="py-8 md:py-20 px-4 md:px-8 max-w-6xl mx-auto opacity-0 translate-y-12 transition-all duration-700 section">
+        <h2 class="text-center text-xl md:text-4xl font-bold mb-6 md:mb-12 relative">
+            ⏰ Countdown to the Big Day
+            <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-16 md:w-25 h-1 bg-gradient-to-r from-red-400 to-teal-400 rounded-full"></div>
+        </h2>
+        <div class="bg-white bg-opacity-10 glass border border-white border-opacity-20 rounded-xl md:rounded-3xl p-4 md:p-12 text-center max-w-2xl mx-auto">
+            <h3 class="text-base md:text-2xl mb-4 md:mb-8">Time Left Until the Magic Begins</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
+                <div class="bg-white bg-opacity-10 rounded-lg md:rounded-2xl p-3 md:p-6 text-center border border-white border-opacity-20">
+                    <div class="text-xl md:text-4xl font-bold text-teal-400" id="days">0</div>
+                    <div class="text-xs md:text-sm uppercase tracking-wider opacity-80">Days</div>
+                </div>
+                <div class="bg-white bg-opacity-10 rounded-lg md:rounded-2xl p-3 md:p-6 text-center border border-white border-opacity-20">
+                    <div class="text-xl md:text-4xl font-bold text-teal-400" id="hours">0</div>
+                    <div class="text-xs md:text-sm uppercase tracking-wider opacity-80">Hours</div>
+                </div>
+                <div class="bg-white bg-opacity-10 rounded-lg md:rounded-2xl p-3 md:p-6 text-center border border-white border-opacity-20">
+                    <div class="text-xl md:text-4xl font-bold text-teal-400" id="minutes">0</div>
+                    <div class="text-xs md:text-sm uppercase tracking-wider opacity-80">Minutes</div>
+                </div>
+                <div class="bg-white bg-opacity-10 rounded-lg md:rounded-2xl p-3 md:p-6 text-center border border-white border-opacity-20">
+                    <div class="text-xl md:text-4xl font-bold text-teal-400" id="seconds">0</div>
+                    <div class="text-xs md:text-sm uppercase tracking-wider opacity-80">Seconds</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Senior Gallery Section -->
+    <section class="py-8 md:py-20 px-4 md:px-8 max-w-6xl mx-auto opacity-0 translate-y-12 transition-all duration-700 section">
+        <h2 class="text-center text-xl md:text-4xl font-bold mb-6 md:mb-12 relative">
+            👩‍🎓 Senior Gallery
+            <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-16 md:w-25 h-1 bg-gradient-to-r from-red-400 to-teal-400 rounded-full"></div>
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+            <div class="relative h-40 md:h-75 bg-gradient-gallery rounded-xl md:rounded-3xl overflow-hidden cursor-pointer transition-all duration-300 shadow-xl md:shadow-2xl hover:-translate-y-2 hover:scale-105 hover:shadow-3xl group" onclick="openGallery('year1')">
+                <img src="img/1st.png" alt="Year 1 Memories" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-red-400 to-teal-400 opacity-0 group-hover:opacity-80 transition-all duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-all duration-300">
+                    <h3 class="text-xl font-bold">Memories from Year 1</h3>
+                    <p class="opacity-90">Click to view more photos</p>
+                </div>
+            </div>
+            <div class="relative h-40 md:h-75 bg-gradient-gallery rounded-xl md:rounded-3xl overflow-hidden cursor-pointer transition-all duration-300 shadow-xl md:shadow-2xl hover:-translate-y-2 hover:scale-105 hover:shadow-3xl group" onclick="openGallery('year2')">
+                <img src="img/2nd.jpg" alt="Year 2 Adventures" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-red-400 to-teal-400 opacity-0 group-hover:opacity-80 transition-all duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-all duration-300">
+                    <h3 class="text-xl font-bold">Year 2 Adventures</h3>
+                    <p class="opacity-90">Click to view more photos</p>
+                </div>
+            </div>
+            <div class="relative h-40 md:h-75 bg-gradient-gallery rounded-xl md:rounded-3xl overflow-hidden cursor-pointer transition-all duration-300 shadow-xl md:shadow-2xl hover:-translate-y-2 hover:scale-105 hover:shadow-3xl group" onclick="openGallery('year3')">
+                <img src="img/3.jpg" alt="Year 3 Achievements" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-red-400 to-teal-400 opacity-0 group-hover:opacity-80 transition-all duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-all duration-300">
+                    <h3 class="text-xl font-bold">Year 3 Achievements</h3>
+                    <p class="opacity-90">Click to view more photos</p>
+                </div>
+            </div>
+            <div class="relative h-40 md:h-75 bg-gradient-gallery rounded-xl md:rounded-3xl overflow-hidden cursor-pointer transition-all duration-300 shadow-xl md:shadow-2xl hover:-translate-y-2 hover:scale-105 hover:shadow-3xl group" onclick="openGallery('year4')">
+                <img src="img/4.jpg" alt="Final Year Moments" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-red-400 to-teal-400 opacity-0 group-hover:opacity-80 transition-all duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black to-transparent text-white transform translate-y-full group-hover:translate-y-0 transition-all duration-300">
+                    <h3 class="text-xl font-bold">Final Year Moments</h3>
+                    <p class="opacity-90">Click to view more photos</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery Modal -->
+        <div id="galleryModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center">
+            <div class="max-w-4xl w-full mx-4">
+                <div class="relative">
+                    <button onclick="closeGallery()" class="absolute -top-10 right-0 text-white text-2xl hover:text-gray-300">&times;</button>
+                    <div id="galleryContent" class="bg-transparent rounded-lg p-4">
+                        <!-- Year 1 Gallery -->
+                        <div id="year1Gallery" class="hidden grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <img src="img/1st 1.jpeg" alt="Year 1 Memory" class="w-full h-48 object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300" onclick="openFullImage(this.src)">
+                            <img src="img/1st 2.jpeg" alt="Year 1 Memory" class="w-full h-48 object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300" onclick="openFullImage(this.src)">
+                            <img src="img/1st 3.jpg" alt="Year 1 Memory" class="w-full h-48 object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300" onclick="openFullImage(this.src)">
+                        </div>
+                        <!-- Year 2 Gallery -->
+                        <div id="year2Gallery" class="hidden grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <img src="img/2nd 1.jpeg" alt="Year 2 Memory" class="w-full h-48 object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300" onclick="openFullImage(this.src)">
+                            <img src="img/2nd 2.jpg" alt="Year 2 Memory" class="w-full h-48 object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300" onclick="openFullImage(this.src)">
+                            <img src="img/2nd 3.jpeg" alt="Year 2 Memory" class="w-full h-48 object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300" onclick="openFullImage(this.src)">
+                        </div>
+                        <!-- Year 3 Gallery -->
+                        <div id="year3Gallery" class="hidden grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <img src="img/3rd 1.jpeg" alt="Year 3 Memory" class="w-full h-48 object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300" onclick="openFullImage(this.src)">
+                            <video src="vedios/3rd 2.mp4" alt="Year 3 Memory" class="w-full h-48 object-contain rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300" controls></video>
+                            <img src="img/3rd 3.jpg" alt="Year 3 Memory" class="w-full h-48 object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300" onclick="openFullImage(this.src)">
+                        </div>
+                        <!-- Year 4 Gallery -->
+                        <div id="year4Gallery" class="hidden grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <video src="vedios/4th 1.mp4" alt="Year 4 Memory" class="w-full h-48 object-contain rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300" onclick="openFullImage(this.src)" controls></video>
+                            <img src="img/4th 2.jpeg" alt="Year 4 Memory" class="w-full h-48 object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300" onclick="openFullImage(this.src)">
+                            <img src="img/4th 3.jpeg" alt="Year 4 Memory" class="w-full h-48 object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300" onclick="openFullImage(this.src)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Full Image Modal -->
+        <div id="fullImageModal" class="fixed inset-0 bg-black bg-opacity-95 z-50 hidden flex items-center justify-center">
+            <button onclick="closeFullImage()" class="absolute top-4 right-4 text-white text-2xl hover:text-gray-300">&times;</button>
+            <img id="fullImage" class="max-w-[90%] max-h-[90vh] object-contain rounded-lg">
+        </div>
+    </section>
+
+    <!-- Message Wall Section -->
+    <section class="py-8 md:py-20 px-4 md:px-8 max-w-6xl mx-auto opacity-0 translate-y-12 transition-all duration-700 section">
+        <h2 class="text-center text-xl md:text-4xl font-bold mb-6 md:mb-12 relative">
+            💬 Message Wall
+            <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-16 md:w-25 h-1 bg-gradient-to-r from-red-400 to-teal-400 rounded-full"></div>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-6 md:mb-12" id="messageWall">
+            <div class="bg-white bg-opacity-10 glass border border-white border-opacity-20 rounded-xl md:rounded-3xl p-4 md:p-8 relative transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                <div class="absolute top-0 left-4 md:left-5 text-3xl md:text-6xl text-teal-400 opacity-30 -mt-2">"</div>
+                <div class="text-sm md:text-lg leading-relaxed mb-3 md:mb-4">Wishing you all the success and happiness in your future endeavors. You've been an inspiration to all of us!</div>
+                <div class="text-right font-semibold text-teal-400 text-xs md:text-base">- Juniors</div>
+            </div>
+            <div class="bg-white bg-opacity-10 glass border border-white border-opacity-20 rounded-xl md:rounded-3xl p-4 md:p-8 relative transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                <div class="absolute top-0 left-4 md:left-5 text-3xl md:text-6xl text-teal-400 opacity-30 -mt-2">"</div>
+                <div class="text-sm md:text-lg leading-relaxed mb-3 md:mb-4">Thank you for being amazing seniors and showing us the way. You'll be missed but never forgotten!</div>
+                <div class="text-right font-semibold text-teal-400 text-xs md:text-base">- Smruti cordinators</div>
+            </div>
+            <div class="bg-white bg-opacity-10 glass border border-white border-opacity-20 rounded-xl md:rounded-3xl p-4 md:p-8 relative transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                <div class="absolute top-0 left-4 md:left-5 text-3xl md:text-6xl text-teal-400 opacity-30 -mt-2">"</div>
+                <div class="text-sm md:text-lg leading-relaxed mb-3 md:mb-4">Your legacy will continue to inspire future generations. Wishing you the very best!</div>
+                <div class="text-right font-semibold text-teal-400 text-xs md:text-base">- Faculty Members</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memory Videos Section -->
+    <section class="py-8 md:py-20 px-4 md:px-8 max-w-6xl mx-auto opacity-0 translate-y-12 transition-all duration-700 section">
+        <h2 class="text-center text-xl md:text-4xl font-bold mb-6 md:mb-12 relative">
+            🎥 Smruti is happening now!!
+            <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-16 md:w-25 h-1 bg-gradient-to-r from-red-400 to-teal-400 rounded-full"></div>
+        </h2>
+        <div class="text-center flex justify-center gap-8">
+            <!-- Left Video -->
+            <div class="w-1/2">
+                <div id="thumbnailContainer" class="inline-block rounded-xl md:rounded-3xl overflow-hidden shadow-xl md:shadow-3xl transition-all duration-300 hover:scale-105 w-full max-w-[560px] cursor-pointer aspect-square">
+                    <img src="img/poster1.png" alt="Click to play video" class="w-full h-full rounded-xl md:rounded-3xl object-cover" onclick="showVideo('videoContainer', 'thumbnailContainer')">
+                </div>
+                <div id="videoContainer" class="hidden inline-block rounded-xl md:rounded-3xl overflow-hidden shadow-xl md:shadow-3xl transition-all duration-300 hover:scale-105 w-full max-w-[560px]">
+                    <video class="w-full rounded-xl md:rounded-3xl object-contain transition-all duration-300" src="vedios/smruti1.mp4" controls muted loop playsinline></video>
+                </div>
+            </div>
+            
+            <!-- Right Video -->
+            <div class="w-1/2">
+                <div id="thumbnailContainer2" class="inline-block rounded-xl md:rounded-3xl overflow-hidden shadow-xl md:shadow-3xl transition-all duration-300 hover:scale-105 w-full max-w-[560px] cursor-pointer aspect-square">
+                    <img src="img/poster2.png" alt="Click to play video" class="w-full h-full rounded-xl md:rounded-3xl object-cover" onclick="showVideo2('videoContainer2', 'thumbnailContainer2')">
+                </div>
+                <div id="videoContainer2" class="hidden inline-block rounded-xl md:rounded-3xl overflow-hidden shadow-xl md:shadow-3xl transition-all duration-300 hover:scale-105 w-full max-w-[560px]">
+                    <video class="w-full rounded-xl md:rounded-3xl object-contain transition-all duration-300" src="vedios/smruti2.mp4" controls muted loop playsinline></video>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function showVideo(videoId, thumbnailId) {
+            document.getElementById(thumbnailId).style.display = 'none';
+            document.getElementById(videoId).style.display = 'inline-block';
+            document.querySelector('#' + videoId + ' video').play();
+        }
+
+        function showVideo2(videoId, thumbnailId) {
+            document.getElementById(thumbnailId).style.display = 'none';
+            document.getElementById(videoId).style.display = 'inline-block';
+            document.querySelector('#' + videoId + ' video').play();
+        }
+    </script>
+
+    <!-- Funny Awards Section -->
+    <section class="py-8 md:py-20 px-4 md:px-8 max-w-6xl mx-auto opacity-0 translate-y-12 transition-all duration-700 section">
+        <h2 class="text-center text-xl md:text-4xl font-bold mb-6 md:mb-12 relative">
+            🏆 Funny Awards
+            <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-16 md:w-25 h-1 bg-gradient-to-r from-red-400 to-teal-400 rounded-full"></div>
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+            <div class="bg-gradient-card rounded-xl md:rounded-3xl p-4 md:p-8 text-center text-white relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:rotate-2 award-card" data-form-url="https://docs.google.com/forms/d/e/1FAIpQLSeKINcHu4C6A9SdJGxaFAOYyFKh1_GUQRfhrm1V8vpND62vvg/viewform?usp=dialog">
+                <div class="text-3xl md:text-5xl mb-2 md:mb-4 text-yellow-400">⏰</div>
+                <div class="text-base md:text-xl font-bold mb-1 md:mb-2">Mr/miss .Always Late</div>
+                <div class="text-sm md:text-lg opacity-90">John</div>
+            </div>
+            <div class="bg-gradient-card rounded-xl md:rounded-3xl p-4 md:p-8 text-center text-white relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:rotate-2 award-card" data-form-url="https://docs.google.com/forms/d/e/1FAIpQLScgTreoq6czzaC4bWB38QlknaR62iyq1Gc0rxkY3X-Pnb6Zow/viewform?usp=dialog">
+                <div class="text-3xl md:text-5xl mb-2 md:mb-4 text-yellow-400">🎭</div>
+                <div class="text-base md:text-xl font-bold mb-1 md:mb-2">Drama Queen</div>
+                <div class="text-sm md:text-lg opacity-90">Pick it</div>
+            </div>
+            <div class="bg-gradient-card rounded-xl md:rounded-3xl p-4 md:p-8 text-center text-white relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:rotate-2 award-card" data-form-url="https://docs.google.com/forms/d/e/1FAIpQLSdp4jj9rBwg6eO906gpkljAuGuNH9GawTcfzQFuvK0WCKsnxg/viewform?usp=dialog">
+                <div class="text-3xl md:text-5xl mb-2 md:mb-4 text-yellow-400">👬</div>
+                <div class="text-base md:text-xl font-bold mb-1 md:mb-2">Dynamic Duo</div>
+                <div class="text-sm md:text-lg opacity-90">pick it</div>
+            </div>
+            <div class="bg-gradient-card rounded-xl md:rounded-3xl p-4 md:p-8 text-center text-white relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:rotate-2 award-card" data-form-url="https://docs.google.com/forms/d/e/1FAIpQLSfIBSdynguIs6GrYCoEwgvWa238EPEG14oa3A0ZTA5Uw5UJCg/viewform?usp=dialog">
+                <div class="text-3xl md:text-5xl mb-2 md:mb-4 text-yellow-400">📚</div>
+                <div class="text-base md:text-xl font-bold mb-1 md:mb-2">Bookworm Extraordinaire</div>
+                <div class="text-sm md:text-lg opacity-90">Sneha</div>
+            </div>
+            <div class="bg-gradient-card rounded-xl md:rounded-3xl p-4 md:p-8 text-center text-white relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:rotate-2 award-card" data-form-url="https://docs.google.com/forms/d/e/1FAIpQLSeKINcHu4C6A9SdJGxaFAOYyFKh1_GUQRfhrm1V8vpND62vvg/viewform?usp=dialog">
+                <div class="text-3xl md:text-5xl mb-2 md:mb-4 text-yellow-400">😄</div>
+                <div class="text-base md:text-xl font-bold mb-1 md:mb-2">Comedian of Class </div>
+                <div class="text-sm md:text-lg opacity-90">Arjun</div>
+            </div>
+            <div class="bg-gradient-card rounded-xl md:rounded-3xl p-4 md:p-8 text-center text-white relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:rotate-2 award-card" data-form-url="https://docs.google.com/forms/d/e/1FAIpQLSfXHX4M_kLjuceLct7UR1gcPNmR2NGxwXbpcc_Q87CtiglE8Q/viewform?usp=dialog">
+                <div class="text-3xl md:text-5xl mb-2 md:mb-4 text-yellow-400">🎵</div>
+                <div class="text-base md:text-xl font-bold mb-1 md:mb-2">Always Humming</div>
+                <div class="text-sm md:text-lg opacity-90">Kavya</div>
+            </div>
+            <div class="bg-gradient-card rounded-xl md:rounded-3xl p-4 md:p-8 text-center text-white relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:rotate-2 award-card" data-form-url="https://docs.google.com/forms/d/e/1FAIpQLScbDaZxQMayAY0TDpVkmKz1gD9pOyPZImSmbQe6At_Z5RzL2g/viewform?usp=dialog">
+                <div class="text-3xl md:text-5xl mb-2 md:mb-4 text-yellow-400">👍</div>
+                <div class="text-base md:text-xl font-bold mb-1 md:mb-2">Cool Kid</div>
+                <div class="text-sm md:text-lg opacity-90">pick it</div>
+            </div>
+            <div class="bg-gradient-card rounded-xl md:rounded-3xl p-4 md:p-8 text-center text-white relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:rotate-2 award-card" data-form-url="https://docs.google.com/forms/d/e/1FAIpQLSdchPTgkLtO_8O7DsrrHmaubqCiWoyh1m9eCuXdSaNXzNQUIQ/viewform?usp=dialog">
+                <div class="text-3xl md:text-5xl mb-2 md:mb-4 text-yellow-400">💀</div>
+                <div class="text-base md:text-xl font-bold mb-1 md:mb-2">Bunk Master</div>
+                <div class="text-sm md:text-lg opacity-90">pick it</div>
+            </div>
+            <div class="bg-gradient-card rounded-xl md:rounded-3xl p-4 md:p-8 text-center text-white relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:rotate-2 award-card" data-form-url="https://docs.google.com/forms/d/e/1FAIpQLSclhRZvCqFrYcwfINLgABHo2ENfiG0pSGdTh0ExkjfxXaxtUA/viewform?usp=dialog">
+                <div class="text-3xl md:text-5xl mb-2 md:mb-4 text-yellow-400">😴</div>
+                <div class="text-base md:text-xl font-bold mb-1 md:mb-2">Sleepy Head</div>
+                <div class="text-sm md:text-lg opacity-90">pick it</div>
+            </div>
+            <div class="bg-gradient-card rounded-xl md:rounded-3xl p-4 md:p-8 text-center text-white relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:rotate-2 award-card mx-auto col-span-1 sm:col-span-2 lg:col-span-3" data-form-url="https://docs.google.com/forms/d/e/1FAIpQLSfG8wqskzTusdR4qjJtQT6z94VsvOWglnoo3Z0W5q-TYbMBxQ/viewform?usp=dialog">
+                <div class="text-3xl md:text-5xl mb-2 md:mb-4 text-yellow-400">🤗</div>
+                <div class="text-base md:text-xl font-bold mb-1 md:mb-2">Kind Soul</div>
+                <div class="text-sm md:text-lg opacity-90">pick it</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section class="py-8 md:py-20 px-4 md:px-8 max-w-6xl mx-auto opacity-0 translate-y-12 transition-all duration-700 section">
+        <div class="text-center">
+            <button id="uploadBtn" class="bg-gradient-btn text-white px-4 py-2 md:px-8 md:py-4 rounded-full text-sm md:text-lg font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                <i class="fas fa-upload mr-2"></i>Upload Funny Photos/Videos
+            </button>
+        </div>
+    </section>
+
+    <script>
+        // Initialize scroll animations
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('opacity-0', 'translate-y-12');
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => observer.observe(section));
+
+        // Gallery Functions
+        function openGallery(year) {
+            const modal = document.getElementById('galleryModal');
+            const galleries = document.querySelectorAll('[id$="Gallery"]');
+            
+            // Hide all galleries first
+            galleries.forEach(gallery => gallery.classList.add('hidden'));
+            
+            // Show the selected gallery
+            const selectedGallery = document.getElementById(year + 'Gallery');
+            if (selectedGallery) {
+                selectedGallery.classList.remove('hidden');
+            }
+            
+            // Show the modal
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeGallery() {
+            const modal = document.getElementById('galleryModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function openFullImage(src) {
+            const modal = document.getElementById('fullImageModal');
+            const img = document.getElementById('fullImage');
+            img.src = src;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeFullImage() {
+            const modal = document.getElementById('fullImageModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Close modals when clicking outside
+        window.addEventListener('click', (e) => {
+            const galleryModal = document.getElementById('galleryModal');
+            const fullImageModal = document.getElementById('fullImageModal');
+            
+            if (e.target === galleryModal) {
+                closeGallery();
+            }
+            if (e.target === fullImageModal) {
+                closeFullImage();
+            }
+        });
+
+        // Countdown Timer
+        function updateCountdown() {
+            const eventDate = new Date("May 31, 2025 00:00:00").getTime();
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+            if (distance < 0) {
+                document.querySelector('.bg-white.bg-opacity-10.glass').innerHTML = 
+                    '<h2 class="text-2xl md:text-3xl text-teal-400">🎉 The Event Has Begun! 🎉</h2>';
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Award card shine effect
+        document.querySelectorAll('.award-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.position = 'relative';
+                if (!card.querySelector('.shine-overlay')) {
+                    const shine = document.createElement('div');
+                    shine.className = 'shine-overlay absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-r from-transparent via-white via-opacity-10 to-transparent transform rotate-45 animate-shine';
+                    card.appendChild(shine);
+                    setTimeout(() => shine.remove(), 600);
+                }
+            });
+        });
+
+        // Award card interaction - click to open Google Form
+        document.querySelectorAll('.award-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const formUrl = card.getAttribute('data-form-url');
+                if (!formUrl) return;
+
+                // Create modal backdrop
+                const backdrop = document.createElement('div');
+                backdrop.className = 'fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center';
+                
+                // Create iframe container
+                const container = document.createElement('div');
+                container.className = 'bg-white rounded-lg p-4 w-11/12 max-w-2xl h-3/4 relative';
+                
+                // Create close button
+                const closeBtn = document.createElement('button');
+                closeBtn.className = 'absolute top-2 right-2 text-gray-600 hover:text-gray-800 text-2xl';
+                closeBtn.innerHTML = '&times;';
+                closeBtn.onclick = () => backdrop.remove();
+                
+                // Create iframe for Google Form
+                const iframe = document.createElement('iframe');
+                iframe.src = formUrl;
+                iframe.className = 'w-full h-full border-0';
+                
+                container.appendChild(closeBtn);
+                container.appendChild(iframe);
+                backdrop.appendChild(container);
+                document.body.appendChild(backdrop);
+            });
+        });
+
+        // Upload button interaction
+        document.getElementById('uploadBtn').addEventListener('click', () => {
+            // Create modal backdrop
+            const backdrop = document.createElement('div');
+            backdrop.className = 'fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center';
+            
+            // Create iframe container
+            const container = document.createElement('div');
+            container.className = 'bg-white rounded-lg p-4 w-11/12 max-w-2xl h-3/4 relative';
+            
+            // Create close button
+            const closeBtn = document.createElement('button');
+            closeBtn.className = 'absolute top-2 right-2 text-gray-600 hover:text-gray-800 text-2xl';
+            closeBtn.innerHTML = '&times;';
+            closeBtn.onclick = () => backdrop.remove();
+            
+            // Create iframe for Google Form
+            const iframe = document.createElement('iframe');
+            // Add required attributes for Google Forms embedding
+            iframe.src = 'https://docs.google.com/forms/d/e/1FAIpQLSd0HWzzG4nqZwKoVZ9DOwPRKqH7Cuf1-zbGrkUrBl4yoCM1Kg/viewform?embedded=true';
+            iframe.className = 'w-full h-full border-0';
+            iframe.setAttribute('frameborder', '0'); 
+            iframe.setAttribute('marginheight', '0');
+            iframe.setAttribute('marginwidth', '0');
+            iframe.setAttribute('allowfullscreen', 'true');
+            iframe.setAttribute('allow', 'autoplay; encrypted-media');
+            
+            container.appendChild(closeBtn);
+            container.appendChild(iframe);
+            backdrop.appendChild(container);
+            document.body.appendChild(backdrop);
+        });
+
+        // Confirm Appearance button interaction
+        document.getElementById('confirmAppearanceBtn').addEventListener('click', () => {
+            // Create modal backdrop
+            const backdrop = document.createElement('div');
+            backdrop.className = 'fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center';
+            
+            // Create iframe container
+            const container = document.createElement('div');
+            container.className = 'bg-white rounded-lg p-4 w-11/12 max-w-2xl h-3/4 relative';
+            
+            // Create close button
+            const closeBtn = document.createElement('button');
+            closeBtn.className = 'absolute top-2 right-2 text-gray-600 hover:text-gray-800 text-2xl';
+            closeBtn.innerHTML = '&times;';
+            closeBtn.onclick = () => backdrop.remove();
+            
+            // Create iframe for Google Form
+            const iframe = document.createElement('iframe');
+            iframe.src = 'https://docs.google.com/forms/d/e/1FAIpQLSd0HWzzG4nqZwKoVZ9DOwPRKqH7Cuf1-zbGrkUrBl4yoCM1Kg/viewform?embedded=true';
+            iframe.className = 'w-full h-full border-0';
+            iframe.setAttribute('frameborder', '0');
+            iframe.setAttribute('marginheight', '0');
+            iframe.setAttribute('marginwidth', '0');
+            iframe.setAttribute('allowfullscreen', 'true');
+            
+            container.appendChild(closeBtn);
+            container.appendChild(iframe);
+            backdrop.appendChild(container);
+            document.body.appendChild(backdrop);
+        });
+    </script>
+</body>
+</html>

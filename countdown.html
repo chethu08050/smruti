@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Smruti countdown</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+        }
+
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            filter: brightness(1.2);
+        }
+
+        @media (max-width: 640px) {
+            #desktop-video {
+                display: none;
+            }
+        }
+
+        @media (min-width: 641px) {
+            #mobile-video {
+                display: none;
+            }
+        }
+    </style>
+    <script>
+        let redirectTimer;
+
+        function redirectToStarting() {
+            console.log("Redirecting to starting.html...");
+            window.location.replace("starting.html");
+        }
+
+        // Function to handle video switching based on screen size
+        function handleVideoSwitch() {
+            const desktopVideo = document.getElementById('desktop-video');
+            const mobileVideo = document.getElementById('mobile-video');
+            
+            // Clear any existing timer
+            if (redirectTimer) {
+                clearTimeout(redirectTimer);
+            }
+            
+            if (window.innerWidth <= 640) {
+                desktopVideo.pause();
+                mobileVideo.play();
+                // Set 4 second timer for mobile
+                redirectTimer = setTimeout(redirectToStarting, 5900);
+            } else {
+                mobileVideo.pause();
+                desktopVideo.play();
+                // Set 5.8 second timer for desktop
+                redirectTimer = setTimeout(redirectToStarting, 5800);
+            }
+        }
+
+        // Initial check
+        document.addEventListener('DOMContentLoaded', function() {
+            const videos = document.querySelectorAll('video');
+            videos.forEach(video => {
+                video.load();
+                video.play().catch(function(error) {
+                    console.log("Video autoplay failed:", error);
+                });
+            });
+            handleVideoSwitch();
+        });
+
+        // Listen for window resize
+        window.addEventListener('resize', handleVideoSwitch);
+
+        // Backup redirect in case the video doesn't trigger
+        setTimeout(redirectToStarting, 6000);
+    </script>
+</head>
+<body class="w-full h-screen relative">
+    <!-- Video Container -->
+    <div class="video-container">
+        <!-- Desktop Background Video -->
+        <video id="desktop-video" autoplay muted loop playsinline>
+            <source src="vedios/count.mp4" type="video/mp4" />
+        </video>
+
+        <!-- Mobile Background Video -->
+        <video id="mobile-video" autoplay muted loop playsinline>
+            <source src="vedios/mobile count.mp4" type="video/mp4" />
+        </video>
+    </div>
+
+    <!-- Optional overlay or message (if needed) -->
+    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center z-10">
+        <!-- You can add any text or logo here if needed -->
+    </div>
+</body>
+</html>
